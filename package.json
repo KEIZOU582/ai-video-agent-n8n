@@ -1,12 +1,13 @@
 {
-  "name": "ai-video-agent",
+  "name": "ai-video-agent-n8n",
   "version": "1.0.0",
+  "description": "",
   "main": "index.cjs",
-  "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "npx n8n"
   },
   "dependencies": {
-    "express": "^4.21.2"
-  }
+    "n8n": "^1.81.4"
+  },
+  "license": "MIT"
 }
