@@ -1,11 +1,13 @@
-import express from 'express';
-const app = express();
-const port = process.env.PORT || 8080;
+const { exec } = require('child_process');
 
-app.get('/', (req, res) => {
-  res.send('AI Video Agent is running!');
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+exec('n8n start', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`Error: ${error.message}`);
+    return;
+  }
+  if (stderr) {
+    console.error(`Stderr: ${stderr}`);
+    return;
+  }
+  console.log(`Stdout: ${stdout}`);
 });
